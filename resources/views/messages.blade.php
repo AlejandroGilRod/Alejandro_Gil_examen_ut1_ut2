@@ -9,15 +9,21 @@
 <body>
     <div class="container">
         <h1>Prueba superada</h1>
+      
         @if($messages->isEmpty())
             <p>No hay mensajes en la base de datos</p>
         @else
             <ul>
                 @foreach($messages as $message)
+                    
                     <li>{{ $message->text }}</li>
+                    <a href="{{ route('negrita', $message->id) }}">Negrita</a>
+                    <a href="{{ route('subrayado', $message->id) }}">Subrayado</a>
                 @endforeach
             </ul>
         @endif
+        
+
     </div>
 </body>
 </html>
